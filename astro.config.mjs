@@ -3,14 +3,12 @@ import compress from "astro-compress";
 import icon from "astro-icon";
 import { defineConfig } from 'astro/config';
 
-// ¡Importa el adaptador de Netlify en lugar del de Vercel!
-import netlify from "@astrojs/netlify";
+// No se importa el adaptador de Netlify aquí
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon(), compress()],
-  // Si tu CV es una página estática (lo más común), usa "static"
-  // Si tienes funciones de servidor o API routes que quieres usar en Netlify, usa "server"
-  output: "static", // Cambia de "server" a "static" si es un sitio estático
-  adapter: netlify() // Usa el adaptador de Netlify
+    integrations: [tailwind(), icon(), compress()],
+    // Siempre usa "static" para un CV puramente estático
+    output: "static", 
+    // No hay "adapter" si no lo necesitas para el build o SSR
 });
