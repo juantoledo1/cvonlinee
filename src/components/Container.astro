@@ -10,6 +10,7 @@ const studies = await Astro.glob("../pages/studies/*.md");
 const lenguages = await Astro.glob("../pages/lenguages/*.md");
 const blogs = await Astro.glob("../pages/blogs/*.md");
 const contact = await Astro.glob("../pages/contact/*.md");
+const CVPdf = "/CvDevJuanToledoEE.pdf"; // Path to the CV PDF file
 const CVImage = "/CvDevJuanToledoEE.jpg";
 ---
 
@@ -118,9 +119,9 @@ const CVImage = "/CvDevJuanToledoEE.jpg";
           <h2 class="card-title">Resume</h2>
           <p>View and download my resume by clicking on the button below</p>
           <div class="card-actions justify-end">
-            <a target="_blank" href={CVImage} download="CvDevJuanToledoEE.jpg">
+            <a target="_blank" href={CVPdf} download="CvDevJuanToledoEE.pdf">
               <button class="btn btn-outline">
-                <p>Download resume</p>
+                <p>Descargar CV (PDF)</p>
                 <Icon name="carbon:download" class="w-6 h-6 ml-1" />
               </button>
             </a>
